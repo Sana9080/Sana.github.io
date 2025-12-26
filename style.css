@@ -1,0 +1,134 @@
+/* RESET & BASICS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif; /* Unique font */
+    background-color: #0f0f11; /* Very dark grey, almost black */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* LAYOUT: The Split Screen */
+.split-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT SIDE (Fixed) */
+.sidebar {
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    border-right: 1px solid #333;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #fff;
+    border-bottom: 4px solid #5d3fd3; /* Purple accent */
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #888;
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    border: 1px solid #5d3fd3;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #5d3fd3;
+    color: white;
+}
+
+/* RIGHT SIDE (Scrolling) */
+.project-feed {
+    width: 60%;
+    padding: 80px;
+}
+
+/* PROJECT ITEMS */
+.project-item {
+    margin-bottom: 100px; /* Big spacing for editorial look */
+    border-bottom: 1px solid #333;
+    padding-bottom: 40px;
+}
+
+.project-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333; /* Subtle background number */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.project-item h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.btn-arrow {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5d3fd3;
+}
+
+.btn-arrow:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+    .project-feed {
+        width: 100%;
+        padding: 40px;
+    }
+    h1 { font-size: 3rem; }
+}
