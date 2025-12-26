@@ -105,7 +105,7 @@ h1 {
     box-shadow: 0 0 20px var(--quantum-cyan);
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS SECTION (HOMEPAGE) */
 .section-header {
     display: flex;
     align-items: center;
@@ -129,7 +129,11 @@ h1 {
     gap: 20px;
 }
 
-.data-card {
+/* Make the whole card clickable and remove underline */
+a.data-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     background: rgba(10, 10, 15, 0.8);
     border: 1px solid var(--interference-gray);
     padding: 30px;
@@ -138,7 +142,7 @@ h1 {
     overflow: hidden;
 }
 
-.data-card:hover {
+a.data-card:hover {
     border-color: var(--quantum-cyan);
     transform: translateY(-5px);
 }
@@ -151,12 +155,111 @@ h1 {
     padding-bottom: 10px;
 }
 
-.data-card h3 {
+a.data-card h3 {
     margin-bottom: 10px;
     font-size: 1.5rem;
+    color: var(--probability-white);
+}
+
+.card-link {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--quantum-cyan);
+    font-weight: bold;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
     h1 { font-size: 3rem; }
+}
+
+/* --- PROJECT PAGE STYLES --- */
+
+.project-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: #888;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: var(--quantum-cyan);
+    border-bottom: 1px solid var(--quantum-cyan);
+}
+
+.project-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--probability-white);
+}
+
+.project-meta {
+    color: var(--quantum-cyan);
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVE YOUTUBE CONTAINER */
+.video-frame {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: 1px solid var(--interference-gray);
+    background: #000;
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-details {
+    background: rgba(10, 10, 15, 0.8); /* Dark Glass */
+    border: 1px solid var(--interference-gray);
+    padding: 40px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+.project-details h3 {
+    color: var(--quantum-cyan);
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.github-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: var(--quantum-cyan);
+    color: var(--void-black);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.github-btn:hover {
+    box-shadow: 0 0 20px var(--quantum-cyan);
+    color: white;
+    background: transparent;
+    border: 1px solid var(--quantum-cyan);
 }
