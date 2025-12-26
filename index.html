@@ -3,55 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sana | Hextech Portfolio</title>
+    <title>SANA | Quantum Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=League+Spartan:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <canvas id="hextech-canvas"></canvas>
+    <canvas id="quantum-canvas"></canvas>
 
-    <div class="content-wrapper">
+    <div class="interface-wrapper">
         
         <nav>
-            <div class="logo">SANA</div>
-            <div class="links">
-                <a href="#home">Origins</a>
-                <a href="#projects">Archives</a>
-                <a href="#contact">Contact</a>
-            </div>
+            <div class="logo">SANA_LABS</div>
+            <div class="status-indicator">SYSTEM: ONLINE</div>
         </nav>
 
         <header id="home">
-            <h1 class="glitch-text" data-text="SANA">SANA</h1>
-            <p class="subtitle">Welcome to the Undercity.</p>
-            <p class="description">I craft digital experiences with a touch of chaos and magic.</p>
-            <a href="#projects" class="hex-btn">Enter the Archives</a>
+            <div class="glitch-wrapper">
+                <h1 data-text="QUANTUM STATE">QUANTUM STATE</h1>
+            </div>
+            <p class="code-line">> Initializing creative protocols...</p>
+            <p class="code-line">> Observation changes the outcome.</p>
+            
+            <div class="bio-panel">
+                <p>I build digital superpositions. My work exists at the intersection of code and design until observed.</p>
+            </div>
+            
+            <a href="#projects" class="btn-quantum">INITIATE_VIEWER()</a>
         </header>
 
-        <section id="projects" class="glass-panel">
-            <h2>The Archives</h2>
+        <section id="projects">
+            <div class="section-header">
+                <h2>// EXPERIMENTS</h2>
+                <div class="line"></div>
+            </div>
+
             <div class="grid">
-                <div class="card">
-                    <div class="card-border"></div>
-                    <h3>Project Jinx</h3>
-                    <p>A chaotic web experiment.</p>
+                <div class="data-card">
+                    <div class="card-header">EXP_01</div>
+                    <h3>Wave Function</h3>
+                    <p>Web simulation of probability distributions.</p>
                 </div>
-                <div class="card">
-                    <div class="card-border"></div>
-                    <h3>Hexgate Portal</h3>
-                    <p>Connecting data points in 3D space.</p>
+                <div class="data-card">
+                    <div class="card-header">EXP_02</div>
+                    <h3>Entanglement</h3>
+                    <p>Real-time data visualization systems.</p>
                 </div>
-                <div class="card">
-                    <div class="card-border"></div>
-                    <h3>Shimmer UI</h3>
-                    <p>Interface design with a dangerous glow.</p>
+                <div class="data-card">
+                    <div class="card-header">EXP_03</div>
+                    <h3>Dark Matter</h3>
+                    <p>UI/UX design for unseen algorithms.</p>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <script src="background.js"></script>
+    <script src="background.js?v=quantum3"></script>
 </body>
 </html>
