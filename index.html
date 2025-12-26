@@ -3,62 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Sana | Hextech Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=League+Spartan:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="split-layout">
+    <canvas id="hextech-canvas"></canvas>
+
+    <div class="content-wrapper">
         
-        <header class="sidebar">
-            <div class="bio-content">
-                <h1>Hello, I'm <br><span class="highlight">Your Name</span></h1>
-                <p class="tagline">Creative Developer & VR Enthusiast.</p>
-                <p class="description">
-                    I build immersive digital experiences. Welcome to my personal collection of work.
-                </p>
-                
-                <nav>
-                    <a href="https://github.com/yourusername" target="_blank" class="nav-link">GitHub</a>
-                    <a href="https://linkedin.com/in/yourname" target="_blank" class="nav-link">LinkedIn</a>
-                    <a href="mailto:youremail@gmail.com" class="nav-link">Contact</a>
-                </nav>
+        <nav>
+            <div class="logo">SANA</div>
+            <div class="links">
+                <a href="#home">Origins</a>
+                <a href="#projects">Archives</a>
+                <a href="#contact">Contact</a>
             </div>
+        </nav>
+
+        <header id="home">
+            <h1 class="glitch-text" data-text="SANA">SANA</h1>
+            <p class="subtitle">Welcome to the Undercity.</p>
+            <p class="description">I craft digital experiences with a touch of chaos and magic.</p>
+            <a href="#projects" class="hex-btn">Enter the Archives</a>
         </header>
 
-        <main class="project-feed">
-            
-            <article class="project-item">
-                <span class="project-number">01</span>
-                <h2>The VR Initiative</h2>
-                <p>A ground-breaking simulation built in Unity.</p>
-                <div class="placeholder-image" style="background-color: #ff6b6b;">Image Goes Here</div>
-                <a href="#" class="btn-arrow">View Project ↗</a>
-            </article>
+        <section id="projects" class="glass-panel">
+            <h2>The Archives</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-border"></div>
+                    <h3>Project Jinx</h3>
+                    <p>A chaotic web experiment.</p>
+                </div>
+                <div class="card">
+                    <div class="card-border"></div>
+                    <h3>Hexgate Portal</h3>
+                    <p>Connecting data points in 3D space.</p>
+                </div>
+                <div class="card">
+                    <div class="card-border"></div>
+                    <h3>Shimmer UI</h3>
+                    <p>Interface design with a dangerous glow.</p>
+                </div>
+            </div>
+        </section>
 
-            <article class="project-item">
-                <span class="project-number">02</span>
-                <h2>Data Visualizer</h2>
-                <p>Interactive dashboard for complex datasets.</p>
-                <div class="placeholder-image" style="background-color: #4ecdc4;">Image Goes Here</div>
-                <a href="#" class="btn-arrow">View Project ↗</a>
-            </article>
-
-            <article class="project-item">
-                <span class="project-number">03</span>
-                <h2>Neon City</h2>
-                <p>An experimental game design prototype.</p>
-                <div class="placeholder-image" style="background-color: #ffe66d;">Image Goes Here</div>
-                <a href="#" class="btn-arrow">View Project ↗</a>
-            </article>
-
-            <footer>
-                <p>© 2024 Your Name. Built different.</p>
-            </footer>
-        </main>
-        
     </div>
 
+    <script src="background.js"></script>
 </body>
 </html>
