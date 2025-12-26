@@ -1,143 +1,162 @@
-/* ARTEFACTS & COLORS */
+/* QUANTUM VARIABLES */
 :root {
-    --bg-dark: #090a14;
-    --hex-blue: #00f0ff; /* Jinx/Hextech Blue */
-    --shimmer-purple: #9d00ff; /* Shimmer Purple */
-    --gold: #c8aa6e; /* Piltover Gold */
+    --void-black: #020204;
+    --quantum-cyan: #00f3ff; /* Laser Blue */
+    --probability-white: #ffffff;
+    --interference-gray: #2a2a2a;
+    --glass: rgba(255, 255, 255, 0.05);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-dark);
-    color: #fff;
-    font-family: 'League Spartan', sans-serif;
+    background-color: var(--void-black);
+    color: var(--probability-white);
+    font-family: 'Share Tech Mono', monospace; /* Code font */
     overflow-x: hidden;
 }
 
-/* 3D BACKGROUND SETUP */
-canvas#hextech-canvas {
+canvas#quantum-canvas {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Puts it behind everything */
+    z-index: -1;
 }
 
-/* TYPOGRAPHY */
-h1, h2, h3, .logo {
-    font-family: 'Cinzel', serif; /* Elegant, sharp font */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* GLITCH EFFECT HEADER */
-h1.glitch-text {
-    font-size: 6rem;
-    color: #fff;
-    text-shadow: 0 0 10px var(--hex-blue), 0 0 20px var(--hex-blue);
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: var(--gold);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    letter-spacing: 5px;
-}
-
-/* LAYOUT */
-.content-wrapper {
-    position: relative;
-    z-index: 1;
-    padding: 40px;
+/* INTERFACE LAYOUT */
+.interface-wrapper {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 40px;
+    position: relative;
+    z-index: 1;
 }
 
+/* HUD / NAV */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 50px;
+    border-bottom: 1px solid var(--interference-gray);
+    padding-bottom: 20px;
+    margin-bottom: 80px;
 }
 
-.logo { font-size: 2rem; color: var(--gold); border: 2px solid var(--gold); padding: 5px 15px; }
-
-.links a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--quantum-cyan);
 }
 
-.links a:hover { color: var(--hex-blue); text-shadow: 0 0 8px var(--hex-blue); }
+.status-indicator {
+    font-size: 0.9rem;
+    color: #0f0; /* Terminal Green */
+    animation: blink 2s infinite;
+}
 
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* HEADER */
 header {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    margin-bottom: 150px;
 }
 
-.description { max-width: 500px; font-size: 1.2rem; line-height: 1.6; margin-bottom: 40px; color: #ccc; }
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.code-line {
+    color: #888;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.bio-panel {
+    border-left: 2px solid var(--quantum-cyan);
+    padding-left: 20px;
+    margin: 40px 0;
+    max-width: 600px;
+    background: linear-gradient(90deg, var(--glass), transparent);
+}
 
 /* BUTTONS */
-.hex-btn {
-    padding: 15px 40px;
-    background: transparent;
-    color: var(--hex-blue);
-    border: 1px solid var(--hex-blue);
+.btn-quantum {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid var(--quantum-cyan);
+    color: var(--quantum-cyan);
     text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
     transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    background: rgba(0, 243, 255, 0.05);
 }
 
-.hex-btn:hover {
-    background: var(--hex-blue);
-    color: #000;
-    box-shadow: 0 0 20px var(--hex-blue);
+.btn-quantum:hover {
+    background: var(--quantum-cyan);
+    color: var(--void-black);
+    box-shadow: 0 0 20px var(--quantum-cyan);
 }
 
-/* GLASS PANELS (The Projects) */
-.glass-panel {
-    background: rgba(15, 20, 30, 0.6); /* Semi-transparent dark */
-    backdrop-filter: blur(10px); /* The Blur Effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 60px;
-    border-radius: 4px;
-    margin-bottom: 100px;
+/* PROJECTS SECTION */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
-.glass-panel h2 { margin-bottom: 40px; font-size: 2.5rem; color: var(--gold); }
+.section-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-right: 20px;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px;
+    background: var(--interference-gray);
+}
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-.card {
-    background: rgba(0, 0, 0, 0.5);
+.data-card {
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid var(--interference-gray);
     padding: 30px;
-    border: 1px solid #333;
-    position: relative;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover {
-    border-color: var(--shimmer-purple);
-    box-shadow: 0 0 15px var(--shimmer-purple);
+.data-card:hover {
+    border-color: var(--quantum-cyan);
     transform: translateY(-5px);
 }
 
-/* Responsive */
+.card-header {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.data-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-    h1.glitch-text { font-size: 3.5rem; }
-    nav { flex-direction: column; gap: 20px; }
+    h1 { font-size: 3rem; }
 }
