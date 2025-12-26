@@ -5,8 +5,27 @@ let width, height;
 let particles = [];
 
 // Configuration for the magic dust
-const particleCount = 100;
-const connectionDistance = 100;
+const particleCount = 100; // Total number of floating particles
+const connectionDistance = 100; // How close particles must be to connect
+const mouseDistance = 150; // How close the mouse must be to interact
+
+// Mouse tracker
+let mouse = {
+    x: null,
+    y: null,
+    radius: mouseDistance
+};
+
+window.addEventListener('mousemove', (event) => {
+    mouse.x = event.x;
+    mouse.y = event.y;
+});
+
+// Reset mouse when leaving window so lines don't get stuck
+window.addEventListener('mouseout', () => {
+    mouse.x = null;
+    mouse.y = null;
+});
 
 function resize() {
     width = canvas.width = window.innerWidth;
@@ -32,6 +51,25 @@ class Particle {
         // Bounce off edges
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Mouse Interaction (The "Magic" Push)
+        // If mouse is active and close, gently push particle away
+        if (mouse.x != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < mouse.radius) {
+                const forceDirectionX = dx / distance;
+                const forceDirectionY = dy / distance;
+                const force = (mouse.radius - distance) / mouse.radius;
+                const directionX = forceDirectionX * force * 3; // Push strength
+                const directionY = forceDirectionY * force * 3;
+
+                this.x -= directionX;
+                this.y -= directionY;
+            }
+        }
     }
 
     draw() {
@@ -46,6 +84,7 @@ class Particle {
 
 function init() {
     resize();
+    particles = []; // Clear array
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
     }
@@ -66,7 +105,7 @@ function animate() {
         p.update();
         p.draw();
 
-        // Draw lines between close particles (The "Constellation" effect)
+        // 1. Draw lines between particles (Constellations)
         for (let j = index + 1; j < particles.length; j++) {
             const p2 = particles[j];
             const dx = p.x - p2.x;
@@ -82,11 +121,16 @@ function animate() {
                 ctx.stroke();
             }
         }
-    });
 
-    requestAnimationFrame(animate);
-}
+        // 2. Draw lines to Mouse (Interaction)
+        if (mouse.x != null) {
+            let dx = mouse.x - p.x;
+            let dy = mouse.y - p.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
 
-window.addEventListener('resize', resize);
-init();
-animate();
+            if (distance < mouse.radius) {
+                ctx.beginPath();
+                // Makes the connection line bright Gold/Yellow when touching the mouse
+                ctx.strokeStyle = `rgba(200, 170, 110, ${1 - distance / mouse.radius})`; 
+                ctx.lineWidth = 1;
+                ctx.moveTo(p
