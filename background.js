@@ -44,7 +44,6 @@ class Particle {
         if (this.y < 0 || this.y > height) this.vy *= -1;
 
         // MOUSE INTERACTION: The "Observer Effect"
-        // When mouse is near, particles speed up and get agitated
         if (mouse.x != null) {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
@@ -79,7 +78,7 @@ function init() {
 function animate() {
     ctx.clearRect(0, 0, width, height);
     
-    // Background is Pure Void (no gradient, just deep black)
+    // Background is Pure Void
     ctx.fillStyle = '#020204';
     ctx.fillRect(0, 0, width, height);
 
@@ -96,7 +95,6 @@ function animate() {
 
             if (distance < connectionDistance) {
                 ctx.beginPath();
-                // Lines are very thin and sharp (Technical look)
                 ctx.strokeStyle = `rgba(0, 243, 255, ${1 - distance / connectionDistance})`;
                 ctx.lineWidth = 0.4; 
                 ctx.moveTo(p.x, p.y);
@@ -113,7 +111,6 @@ function animate() {
 
             if (distance < mouseDistance) {
                 ctx.beginPath();
-                // Interaction line is White (Energy transfer)
                 ctx.strokeStyle = `rgba(255, 255, 255, ${0.8 * (1 - distance / mouseDistance)})`;
                 ctx.lineWidth = 0.8;
                 ctx.moveTo(p.x, p.y);
