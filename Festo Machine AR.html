@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANA | Festo Machine AR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="quantum-canvas"></canvas>
+
+    <div class="project-container">
+        
+        <a href="index.html" class="back-btn"><< RETURN_TO_NEXUS</a>
+
+        <h1 class="project-title">Festo-Machine-AR</h1> 
+        <p class="project-meta">STACK: UNITY + C# + REALVIRTUAL + AR</p>
+
+        <div class="video-frame">
+            <iframe 
+                width="560" 
+                height="315"
+                src="https://www.youtube.com/embed/HtTii3ktvSM"
+                title="Festo Machine AR Project"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="project-details">
+            <h3>// MISSION BRIEFING</h3>
+            <p> 
+                A Unity-built AR industrial training and visualization experience for the Festo machine. The app overlays an interactive digital twin onto the physical setup, using RealVirtual motion scripts to simulate workflows and present operational data in-context for faster learning, troubleshooting, and safer decision-making.
+            </p>
+            <br>
+
+            <h3>// CORE SYSTEMS</h3>
+            <p>
+                > AR machine overlay → component-level exploration + contextual info<br>
+                > RealVirtual motion logic → Linear / Curve + Transport Guided + Guided Line<br>
+                > Drive + Stopper behavior → Drive + Drive Erratic Position for controlled halts
+            </p>
+            <br>
+
+            <h3>// KEY IMPLEMENTATIONS</h3>
+            <p>
+                > Interactive hotspots → tap parts to reveal status, role, and workflow step<br>
+                > Transport simulation → guided paths for object flow + station-to-station logic<br>
+                > Fault/stop scenarios → stopper behavior to mimic jams, safety stops, and resets
+            </p>
+
+            <div style="margin-top: 30px;">
+                <a href="https://github.com/Sana9080/Festo2025.git" target="_blank" class="github-btn">
+                    VIEW SOURCE CODE
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="background.js?v=quantum_final"></script>
+</body>
+</html>
