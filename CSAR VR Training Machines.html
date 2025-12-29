@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANA | Project Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="quantum-canvas"></canvas>
+
+    <div class="project-container">
+        
+        <a href="index.html" class="back-btn"><< RETURN_TO_NEXUS</a>
+
+        <h1 class="project-title">CSAR VR Training Machines</h1>
+        <p class="project-meta">ROLE: NPC ANIMATION + YARN SPINNER INTEGRATION + MARKETING VIDEO</p>
+        <p class="project-meta">STACK: UNITY + C# + ANIMATOR + YARN SPINNER</p>
+
+        <div class="video-frame">
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/_IWwekoKgJM"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="project-details">
+            <h3>// MISSION BRIEFING</h3>
+            <p>
+                A group-built VR training application for Swansea University’s Centre for Sustainable Aquatic Research (CSAR), recreating a Recirculating Aquaculture System (RAS) as an interactive learning experience.
+                This page highlights only my contribution: building and integrating animated NPC instructors that guide users through the training flow.
+            </p>
+            <br>
+
+            <h3>// CORE SYSTEMS (MY CONTRIBUTION)</h3>
+            <p>
+                > NPC instructor animations → clear step-by-step guidance for trainees<br>
+                > Animator Controllers + transition logic → reliable animation switching using triggers/booleans<br>
+                > Yarn Spinner dialogue sync → dialogue lines trigger matching actions at the right moments
+            </p>
+            <br>
+
+            <h3>// KEY IMPLEMENTATIONS (MY CONTRIBUTION)</h3>
+            <p>
+                > Animation pipeline in Unity (Animation window) → idle/talk/gesture + expressive delivery<br>
+                > Custom Yarn commands → precise timing between dialogue + movement/gestures<br>
+                > Basic lip-sync support → mouth movement synced with dialogue audio via AudioSource/timing events
+            </p>
+
+            <div style="margin-top: 30px;">
+                <!-- Replace this repo URL if your CSAR project repo is different -->
+                <a href="https://github.com/Sana9080/Barracuda" target="_blank" class="github-btn">VIEW SOURCE CODE</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="background.js?v=quantum_final"></script>
+</body>
+</html>
